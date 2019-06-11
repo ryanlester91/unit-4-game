@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+<head>
+    <meta char = "UTF-8">
+    <title>Unit 4 Game- Crystals Collector</title>
+    <!--jQuery link right here-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--stylesheets link rels-->
+    <link rel= "stylesheet" type= "text/css" src= "assets/css/reset.css">
+    <link rel= "stylesheet" type= "text/css" src= "assets/css/style.css">
+    <!--Google fonts link-->
+    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+    background-image: url("assets/images/slovenia-river-caves.jpg");
+}
+
+#title {
+    color: white;
+    padding: 5px;
+    margin-left: 20px;
+    font-family: 'Arvo', serif;
+    font-size: 36px;
+    border: 3px solid black;
+    width: 700px;
+}
+
+#instructions {
+    border: 1px solid black;
+    margin-left: 20px;
+    width: 500px;
+    background-color: #ff9999;
+}
+
+#goal {
+    border: 1px solid black;
+    font-family: Verdana, sans-serif;
+    font-size: 48px;
+    width: 350px;
+    height: 125px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #ccc;
+    text-align: center;
+}
+
+#counters {
+    float: left;
+    border: 1px solid blue;
+    background-color: cyan;
+    width: 100px;
+    height: 100px;
+}
+
+#counterTwo {
+    float: left;
+    border: 2px double blue;
+    background-color: palegreen;
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+}
+
+#previous {
+    font-family: Verdana, sans-serif;
+    font-size: 48px;
+}
+
+.crystals {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.crystal {
+    border: 1px solid green;
+    height: 150px;
+    width: 150px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+</style>
+<body>
+        <div class= "container">
+                <div id = "title">
+                    <h1>Crystals Collector</h1>
+                </div>
+            </div>
+        
+        <div class = "container">
+            <div id = "instructions">
+                 <p>You will be given a random number at the start of the game.</p>
+                 <p>You will find four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                 <p> You win the game by matching your total score to the random number. Go over that number and you lose the game.</p>
+                 <p>The value of each crystal is hidden from you until you click on it.</p>
+                 <p>Each time when the game starts, the game will change the value of each of the four crystals.</p>
+        
+            </div>
+        
+        </div>
+    <div id= "goal"></div><br>
+    <div id= "counters">
+        <strong>Wins: </strong><span id="wins"></span><br>
+        <strong>Losses: </strong><span id="losses"></span><br>
+    </div>
+
+    <div class= "crystals">
+    </div>
+
+
+    <div id = "counterTwo">
+        <strong>Total Score: </strong><br><span id="previous"></span>
+
+        
+
+<script type= "text/javascript" src="assets/js/game.js"></script>
+
+</body>
+</html>
