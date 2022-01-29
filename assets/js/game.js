@@ -1,4 +1,3 @@
-
 //Variables
 //=======================
 var randomGoal;
@@ -6,6 +5,8 @@ var win = 0;
 var loss = 0;
 var prev = 0;
 //========================
+
+
 function reset() {
     $('.crystals').empty();
 
@@ -43,25 +44,30 @@ reset();
 //Event Delegation
 $(document).on('click','.crystal', function () {
     //$(".crystal").on("click", function() {
+        if(prev === randomGoal) {
+            console.log("Right on the money!");
+            win++;
+            $('#wins').html(win);
+            reset();
+            prev = 0;
+            }    
+    
+        else if(prev > randomGoal) {
+            console.log("BUST!");
+            loss++;
+            $('#losses').html(loss);
+            reset();
+            prev = 0;
+            }
 
+        
+    
     var crystalNum = parseInt($(this).attr('data-random-value'));
         prev += crystalNum;
         $('#previous').html(prev)
         console.log(prev);
 
-        if(prev > randomGoal) {
-            loss++;
-            $('#losses').html(loss);
-            prev = 0;
-            reset();
-            }
-
-        else if(prev === randomGoal) {
-            win++;
-            $('#wins').html(win);
-            prev = 0;
-            reset();
-            }
+        
                
 		 
 });
